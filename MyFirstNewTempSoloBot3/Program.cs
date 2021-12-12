@@ -73,7 +73,7 @@ namespace MyFirstNewTempSoloBot2
                         MessageId = (int)msg.SelectToken("message.message_id");
                         Date = (int)msg.SelectToken("message.date");
                     }
-
+                    if(isBotMtessage != null)
                     if ((bool)isBotMtessage == false && lastMessageId != MessageId)
                     {
                         userMessageText = (string)msg.SelectToken("message.text");
@@ -242,7 +242,8 @@ namespace MyFirstNewTempSoloBot2
 
                 string msg = new string("");
 
-                if (files != null)
+
+                if (files != null && files.Length>0)
                 {
                     for (var i = 1; i <= files.Length; i++)
                     {
